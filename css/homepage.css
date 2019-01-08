@@ -33,6 +33,14 @@ img {
   margin-left: 10px;
 }
 
+.search_bar {
+  height: 35px;
+  width: 600px;
+  margin: 0px 60px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
 .sidebar {
   grid-area: sidebar;
   background-color: #666;
