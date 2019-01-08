@@ -31,6 +31,7 @@ img {
 .title {
   display: inline-block;
   font-size: 30px;
+  color: #444;
   margin-left: 10px;
 }
 
