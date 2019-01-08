@@ -12,8 +12,6 @@ body {
 
 .navigation {
   grid-area: navigation;
-  background-color: #fff;
-  color: #000;
   padding: 20px;
   font-size: 150%;
 }
@@ -31,6 +29,7 @@ img {
 
 .title {
   display: inline-block;
+  font-size: 40px;
 }
 
 .sidebar {
