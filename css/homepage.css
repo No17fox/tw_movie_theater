@@ -59,6 +59,10 @@ body {
   outline: none;
 }
 
+.search_btn:hover {
+  background-color: #fafafa;
+}
+
 .search_btn image {
   width: 16px;
   height: 16px;
