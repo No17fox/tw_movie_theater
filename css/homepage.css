@@ -32,7 +32,7 @@ body {
 }
 
 .search {
-  margin: 0px 60px;
+  margin: 0px 160px;
   font-size: 0px;
 }
 
@@ -44,12 +44,12 @@ body {
   font-size: 18px;
   border: 1px solid #c8c8c8;
   border-right: none;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .search_btn {
   border: 1px solid #c8c8c8;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0px 5px 5px 0px;
   height: 35px;
   width: 70px;
   margin: 0px;
