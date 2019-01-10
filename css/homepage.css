@@ -45,13 +45,14 @@ body {
   font-size: 18px;
   border: 1px solid #c8c8c8;
   border-right: none;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 3px 0px 0px 3px;
   outline: none;
+  box-shadow:0.5px 0.5px 0.5px #aaa inset;
 }
 
 .search_btn {
   border: 1px solid #c8c8c8;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 3px 3px 0px;
   height: 35px;
   width: 70px;
   margin: 0px;
