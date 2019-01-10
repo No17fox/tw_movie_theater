@@ -3,6 +3,7 @@
 }
 
 body {
+  margin: 0px;
   display: grid;
   grid-template-columns: 240px auto;
   grid-template-areas: "navigation navigation" "sidebar content";
