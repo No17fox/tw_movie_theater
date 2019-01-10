@@ -14,6 +14,7 @@ body {
   padding: 10px;
   display: flex;
   align-items: center;
+  box-shadow:2px 0px 5px #c8c8c8;
 }
 
 .logo {
@@ -72,7 +73,7 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  background-color: #666;
+  /*background-color: #666;*/
   color: #fff;
   padding: 20px;
   font-size: 150%;
@@ -80,7 +81,7 @@ body {
 
 .content {
   grid-area: content;
-  background-color: #999;
+  /*background-color: #999;*/
   color: #fff;
   padding: 20px;
   font-size: 150%;
