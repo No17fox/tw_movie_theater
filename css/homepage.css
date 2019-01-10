@@ -11,7 +11,7 @@ body {
 
 .navigation {
   grid-area: navigation;
-  padding: 10px;
+  padding: 10px 25px;
   display: flex;
   align-items: center;
   box-shadow:2px 0px 5px #c8c8c8;
@@ -35,7 +35,7 @@ body {
 }
 
 .search {
-  margin: 0px 160px;
+  margin: 0px 150px;
   font-size: 0px;
 }
 
