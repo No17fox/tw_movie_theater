@@ -28,10 +28,19 @@ img {
   height: 100%;
 }
 
-.title {
-  font-size: 30px;
+.logo_title {
   color: #444;
   margin-left: 10px;
+}
+
+.main_title {
+  font-size: 30px;
+  margin: 0px;
+}
+
+.sub_title {
+  font-size: 10px;
+  margin: 0px;
 }
 
 .search {
