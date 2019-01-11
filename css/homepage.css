@@ -59,7 +59,7 @@ img {
   width: 70px;
   margin: 0px;
   vertical-align: top;
-  background-color: #fafafa;
+  background: #fafafa;
   outline: none;
 }
 
@@ -79,6 +79,10 @@ img {
   background: #f8f8f8;
   font-size: 15px;
   overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
 }
 
 .guide_section {
