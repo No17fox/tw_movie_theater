@@ -6,6 +6,7 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns: 240px auto;
+  grid-template-rows: 70px 550px;
   grid-template-areas: "navigation navigation" "sidebar content";
 }
 
@@ -92,6 +93,10 @@ img {
 
 .sidebar::-webkit-scrollbar {
   width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #dcdcdc;
 }
 
 .guide_section {
