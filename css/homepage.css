@@ -159,12 +159,17 @@ img {
 .movie:hover {
   cursor: pointer;
   background: #e6e6e6;
+  border-radius: 8px;
 }
 
 .poster {
   margin: 5px;
   width: 129px;
   height: 191px;
+}
+
+.poster img {
+  border-radius: 8px;
 }
 
 .movie_infor {
