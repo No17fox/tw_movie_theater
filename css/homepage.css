@@ -173,10 +173,11 @@ img {
   font-size: 14px;
   font-weight: bold;
   color: #444;
+  margin-bottom: 5px;
 }
 
 .rating {
-  font-size: 12px;
+  font-size: 10px;
   color: #fff;
   background: #ff781e;
   padding: 1px 5px;
