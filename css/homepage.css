@@ -156,6 +156,11 @@ img {
   grid-gap: 10px;
 }
 
+.movie:hover {
+  cursor: pointer;
+  background: #e6e6e6;
+}
+
 .poster {
   margin: 5px;
   width: 129px;
