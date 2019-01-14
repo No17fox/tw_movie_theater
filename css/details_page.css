@@ -92,10 +92,9 @@ img {
 .film_title {
   font-size: 25px;
   font-weight: bold;
-  margin: 20px 0px;
 }
 
-.translated_title, .original_title, .item {
+.translated_title, .original_title, .item, .rating, .synopsis, .name, .comment {
   color: #444;
 }
 
@@ -104,23 +103,87 @@ img {
 }
 
 .film_infor {
-display: flex;
-align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 }
 
 .poster {
-  width: 20%;
-  height: 30%;
+  width: 15%;
+  height: 25%;
   margin: 20px 40px 20px 0px;
 }
 
-.infor {
-  margin-top: 20px;
+.poster img {
+  border-radius: 8px;
+}
+
+.item, .item_content, .synopsis, .name, .comment {
   font-size: 14px;
+}
+
+.infor {
+  margin: 20px 25px 0px 0px;
+  padding-right: 25px;
   line-height: 12px;
+  border-right: 0.5px solid #ddd;
 }
 
 .infor p {
   margin: 0px;
   padding: 5px;
+}
+
+.rating_infor {
+  margin-top: 20px;
+}
+
+.rating {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.star img {
+  width: 15%;
+}
+
+.section_title {
+  color: #072;
+  font-weight: bold;
+  margin: 14px 0px;
+}
+
+.synopsis {
+  width: 85%;
+  padding-bottom: 20px;
+}
+
+.cast_member {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+}
+
+.user_name {
+  color: #37a;
+}
+
+.time {
+  color: #999;
+}
+
+.user_rating img {
+  width: 2%;
+}
+
+.comment_title, .comment_content {
+  margin: 14px 0px;
+}
+
+.comment {
+  border-bottom: 0.5px solid #ddd;
+  width: 85%;
+}
+
+.recommendation {
+  display: grid;
 }
