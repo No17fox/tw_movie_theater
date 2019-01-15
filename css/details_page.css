@@ -94,7 +94,13 @@ img {
   font-weight: bold;
 }
 
-.translated_title, .original_title, .item, .rating, .synopsis, .name, .comment {
+.translated_title,
+.original_title,
+.item,
+.rating,
+.synopsis,
+.name,
+.comment {
   color: #444;
 }
 
@@ -117,7 +123,11 @@ img {
   border-radius: 8px;
 }
 
-.item, .item_content, .synopsis, .name, .comment {
+.item,
+.item_content,
+.synopsis,
+.name,
+.comment {
   font-size: 14px;
 }
 
@@ -175,7 +185,8 @@ img {
   width: 2%;
 }
 
-.comment_title, .comment_content {
+.comment_title,
+.comment_content {
   margin: 14px 0px;
 }
 
