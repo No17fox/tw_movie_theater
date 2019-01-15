@@ -1,6 +1,6 @@
-@import "basic.css";
-@import "navigation.css";
-@import "movie_card.css";
+@import 'basic.css';
+@import 'navigation.css';
+@import 'movie_card.css';
 
 body {
   margin: 0px;
