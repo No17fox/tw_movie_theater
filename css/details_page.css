@@ -5,13 +5,20 @@
 body {
   margin: 0px;
   display: grid;
-  grid-template-rows: 80px auto;
+  grid-template-rows: 70px auto;
   grid-gap: 30px;
+}
+
+.navigation {
+  height: 70px;
+  position: fixed;
+  grid-row-end: 2;
 }
 
 .content {
   width: 80%;
   margin: auto;
+  grid-row-end: 3;
   display: grid;
   grid-template-columns: 3fr 1fr;
 }
@@ -157,6 +164,7 @@ body {
 }
 
 .footer {
+  grid-row-end: 4;
   height: 40px;
   color: #999;
   box-shadow: 2px 0px 5px #c8c8c8;
