@@ -1,283 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/homepage.css"
+    />
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script
+      src="../js/libs/requirejs/2.3.6/require.min.js"
+      data-main="../js/main.js"
+    ></script>
+    <title>思沃影院</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" type="text/css" media="screen" href="../css/homepage.css" />
-  <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
-  <script src="../js/libs/requirejs/2.3.6/require.min.js" data-main="../js/main.js"></script>
-  <title>思沃影院</title>
-</head>
-
-<body>
-  <div class="navigation">
-    <div class="logo"><img src="../images/logo.png" alt="" /></div>
-    <div class="logo_title">
-      <p class="main_title">思沃影院</p>
-      <p class="sub_title">TW MOVIE THEATER</p>
-    </div>
-    <div class="search">
-      <input class="search_bar" type="search" name="search" placeholder="搜索" autofocus="autofocus" />
-      <button class="search_btn">
-        <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
-      </button>
-    </div>
-  </div>
-  <div class="sidebar">
-    <ul class="guide_section">
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/homepage.svg" alt="" />
-          </div>
-          <div class="guide_title">首页</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/trophy.png" alt="" />
-          </div>
-          <div class="guide_title">Top 250</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/recommendation.svg" alt="" />
-          </div>
-          <div class="guide_title">特别推荐</div>
-        </div>
-      </li>
-    </ul>
-    <ul class="guide_section">
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/movie.png" alt="" />
-          </div>
-          <div class="guide_title">剧情</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon"><img src="../images/spy.png" alt="" /></div>
-          <div class="guide_title">悬疑</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon"><img src="../images/ufo.png" alt="" /></div>
-          <div class="guide_title">科幻</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon"><img src="../images/gun.png" alt="" /></div>
-          <div class="guide_title">动作</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/animation.png" alt="" />
-          </div>
-          <div class="guide_title">动漫</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/comedy.png" alt="" />
-          </div>
-          <div class="guide_title">喜剧</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/love.png" alt="" />
-          </div>
-          <div class="guide_title">爱情</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/ghost.png" alt="" />
-          </div>
-          <div class="guide_title">恐怖</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/palette.png" alt="" />
-          </div>
-          <div class="guide_title">文艺</div>
-        </div>
-      </li>
-    </ul>
-    <ul class="guide_section">
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/global.png" alt="" />
-          </div>
-          <div class="guide_title">华语</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/global.png" alt="" />
-          </div>
-          <div class="guide_title">欧美</div>
-        </div>
-      </li>
-      <li>
-        <div class="guide_item">
-          <div class="guide_icon">
-            <img src="../images/global.png" alt="" />
-          </div>
-          <div class="guide_title">日韩</div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="content">
-    <div class="poster_wall">
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p692813374.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">大鱼</div>
-          <div class="rating">评分：8.7</div>
-        </div>
+  <body>
+    <div class="navigation">
+      <div class="logo"><img src="../images/logo.png" alt="" /></div>
+      <div class="logo_title">
+        <p class="main_title">思沃影院</p>
+        <p class="sub_title">TW MOVIE THEATER</p>
       </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910813120.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">霸王别姬</div>
-          <div class="rating">评分：9.5</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910824340.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">死亡诗社</div>
-          <div class="rating">评分：8.9</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910824951.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">放牛班的春天</div>
-          <div class="rating">评分：9.2</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910825503.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">指环王3：王者无敌</div>
-          <div class="rating">评分：8.1</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910828286.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">花样年华</div>
-          <div class="rating">评分：8.5</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/photo/m/public/p2540924496.webp" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">龙猫</div>
-          <div class="rating">评分：9.1</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/photo/m/public/p1606727862.webp" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">千与千寻</div>
-          <div class="rating">评分：9.2</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910832390.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">东京物语</div>
-          <div class="rating">评分：9.2</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1354436051.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">指环王1：魔戒再现</div>
-          <div class="rating">评分：8.9</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p909265336.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">指环王2：双塔奇兵</div>
-          <div class="rating">评分：8.9</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1910895719.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">冰川时代</div>
-          <div class="rating">评分：8.4</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1446261379.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">天空之城</div>
-          <div class="rating">评分：9.0</div>
-        </div>
-      </div>
-      <div class="movie">
-        <div class="poster">
-          <img src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1917567652.jpg" alt="" />
-        </div>
-        <div class="movie_infor">
-          <div class="movie_title">风之谷</div>
-          <div class="rating">评分：8.8</div>
-        </div>
+      <div class="search">
+        <input
+          class="search_bar"
+          type="search"
+          name="search"
+          placeholder="搜索"
+          autofocus="autofocus"
+        />
+        <button class="search_btn">
+          <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
+        </button>
       </div>
     </div>
-  </div>
-</body>
-
+    <div class="sidebar">
+      <ul class="guide_section">
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/homepage.svg" alt="" />
+            </div>
+            <div class="guide_title">首页</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/trophy.png" alt="" />
+            </div>
+            <div class="guide_title">Top 250</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/recommendation.svg" alt="" />
+            </div>
+            <div class="guide_title">特别推荐</div>
+          </div>
+        </li>
+      </ul>
+      <ul class="guide_section">
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/movie.png" alt="" />
+            </div>
+            <div class="guide_title">剧情</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon"><img src="../images/spy.png" alt="" /></div>
+            <div class="guide_title">悬疑</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon"><img src="../images/ufo.png" alt="" /></div>
+            <div class="guide_title">科幻</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon"><img src="../images/gun.png" alt="" /></div>
+            <div class="guide_title">动作</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/animation.png" alt="" />
+            </div>
+            <div class="guide_title">动漫</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/comedy.png" alt="" />
+            </div>
+            <div class="guide_title">喜剧</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/love.png" alt="" />
+            </div>
+            <div class="guide_title">爱情</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/ghost.png" alt="" />
+            </div>
+            <div class="guide_title">恐怖</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/palette.png" alt="" />
+            </div>
+            <div class="guide_title">文艺</div>
+          </div>
+        </li>
+      </ul>
+      <ul class="guide_section">
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/global.png" alt="" />
+            </div>
+            <div class="guide_title">华语</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/global.png" alt="" />
+            </div>
+            <div class="guide_title">欧美</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item">
+            <div class="guide_icon">
+              <img src="../images/global.png" alt="" />
+            </div>
+            <div class="guide_title">日韩</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="poster_wall">
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p692813374.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">大鱼</div>
+            <div class="rating">评分：8.7</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910813120.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">霸王别姬</div>
+            <div class="rating">评分：9.5</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910824340.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">死亡诗社</div>
+            <div class="rating">评分：8.9</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910824951.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">放牛班的春天</div>
+            <div class="rating">评分：9.2</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910825503.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">指环王3：王者无敌</div>
+            <div class="rating">评分：8.1</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910828286.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">花样年华</div>
+            <div class="rating">评分：8.5</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/photo/m/public/p2540924496.webp"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">龙猫</div>
+            <div class="rating">评分：9.1</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/photo/m/public/p1606727862.webp"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">千与千寻</div>
+            <div class="rating">评分：9.2</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910832390.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">东京物语</div>
+            <div class="rating">评分：9.2</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1354436051.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">指环王1：魔戒再现</div>
+            <div class="rating">评分：8.9</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p909265336.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">指环王2：双塔奇兵</div>
+            <div class="rating">评分：8.9</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1910895719.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">冰川时代</div>
+            <div class="rating">评分：8.4</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img1.doubanio.com/view/movie_poster_cover/spst/public/p1446261379.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">天空之城</div>
+            <div class="rating">评分：9.0</div>
+          </div>
+        </div>
+        <div class="movie">
+          <div class="poster">
+            <img
+              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1917567652.jpg"
+              alt=""
+            />
+          </div>
+          <div class="movie_infor">
+            <div class="movie_title">风之谷</div>
+            <div class="rating">评分：8.8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="../js/service.js"></script>
+  </body>
 </html>
