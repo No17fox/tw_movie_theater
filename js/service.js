@@ -54,3 +54,11 @@ function getMovieInfoByName(movieName) {
   }
   return false;
 }
+
+function getMovieInfoByGenre(movieGenre) {
+  let movies = JSON.parse(localStorage.moviesStorage);
+
+  return Object.values(movies).filter(movie =>
+    movie.genres.includes(movieGenre)
+  );
+}
