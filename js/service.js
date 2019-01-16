@@ -45,7 +45,7 @@ function getMovieInfoByID(movieID) {
   return movies[movieID];
 }
 
-function getMovieInfoByName(movieName) {
+function getMoviesInfoByName(movieName) {
   let movies = JSON.parse(localStorage.moviesStorage);
 
   return Object.values(movies).filter(
@@ -53,7 +53,7 @@ function getMovieInfoByName(movieName) {
   );
 }
 
-function getMovieInfoByGenre(movieGenre) {
+function getMoviesInfoByGenre(movieGenre) {
   let movies = JSON.parse(localStorage.moviesStorage);
 
   return Object.values(movies).filter(movie =>

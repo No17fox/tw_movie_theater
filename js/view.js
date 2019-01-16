@@ -12,3 +12,23 @@ function renderMovieCard(movie) {
   let movieClone = document.importNode(movieTemplate.content, true);
   posterWall.append(movieClone);
 }
+
+function renderNewMovieCards(movies) {
+  removeAllMovieCards();
+
+  if (Array.isArray(movies)) {
+    movies.forEach(movie => {
+      renderMovieCard(movie);
+    });
+  } else {
+    renderMovieCard(movies);
+  }
+}
+
+function removeAllMovieCards() {
+  let posterWall = document.getElementById("poster_wall");
+  let movieCards = posterWall.querySelectorAll(".movie");
+  movieCards.forEach(movieCard => {
+    posterWall.removeChild(movieCard);
+  });
+}
