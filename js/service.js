@@ -40,7 +40,17 @@ function getMovieDetailInfo(movieId, callback) {
   });
 }
 
-function getMovieInfo(movieID) {
+function getMovieInfoByID(movieID) {
   let movies = JSON.parse(localStorage.moviesStorage);
-  return movies[movieID];
+  return movies[movieID] ? movies[movieID] : false;
+}
+
+function getMovieInfoByName(movieName) {
+  let movies = JSON.parse(localStorage.moviesStorage);
+  for (let movie of Object.values(movies)) {
+    if (movieName === movie.title || movieName === movie.original_title) {
+      return movie;
+    }
+  }
+  return false;
 }
