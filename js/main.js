@@ -17,7 +17,19 @@ function showTopMovies() {
   showMoviesByRange(100, 147);
 }
 
-function showRandomMovies() {}
+function showRandomMovies(count = 12) {
+  let movieArr = [];
+  for (let i = 0; i < count; i++) {
+    let sequence = getRandomNumByRange(0, 249);
+    let movie = getMovieBySequence(sequence);
+    movieArr.push(movie);
+  }
+  renderNewMovieCards(movieArr);
+}
+
+function getRandomNumByRange(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
 
 function showMoviesByGenre(event) {
   let parentNode = event.target.parentNode;

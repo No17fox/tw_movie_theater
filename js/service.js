@@ -85,3 +85,10 @@ function getMoviesByRange(firstNum, secondNum) {
   let movies = JSON.parse(localStorage.moviesStorage);
   return Object.values(movies).slice(firstNum, secondNum + 1);
 }
+
+function getMovieBySequence(sequence) {
+  sequence = sequence >= 0 ? (sequence <= 249 ? sequence : 249) : 0;
+
+  let movies = JSON.parse(localStorage.moviesStorage);
+  return Object.values(movies)[sequence];
+}
