@@ -42,17 +42,15 @@ function getMovieDetailInfo(movieId, callback) {
 
 function getMovieInfoByID(movieID) {
   let movies = JSON.parse(localStorage.moviesStorage);
-  return movies[movieID] ? movies[movieID] : false;
+  return movies[movieID];
 }
 
 function getMovieInfoByName(movieName) {
   let movies = JSON.parse(localStorage.moviesStorage);
-  for (let movie of Object.values(movies)) {
-    if (movieName === movie.title || movieName === movie.original_title) {
-      return movie;
-    }
-  }
-  return false;
+
+  return Object.values(movies).find(
+    movie => movieName === movie.title || movieName === movie.original_title
+  );
 }
 
 function getMovieInfoByGenre(movieGenre) {
