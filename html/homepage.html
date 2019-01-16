@@ -12,6 +12,7 @@
     />
     <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script
       src="../js/libs/requirejs/2.3.6/require.min.js"
       data-main="../js/main.js"
@@ -164,38 +165,18 @@
       <div class="poster_wall" id="poster_wall">
         <template id="movie_card">
           <div class="movie">
-            <div class="poster"><img id="poster" src="" alt="" /></div>
-            <div class="movie_infor">
-              <div class="movie_title" id="title"></div>
-              <div class="rating">评分：<span id="rating"></span></div>
-            </div>
+            <a href="./details_page.html">
+              <div class="poster"><img id="poster" src="" alt="" /></div>
+              <div class="movie_infor">
+                <div class="movie_title" id="title"></div>
+                <div class="rating">评分：<span id="rating"></span></div>
+              </div>
+            </a>
           </div>
         </template>
-        <div class="movie">
-          <div class="poster">
-            <img
-              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p692813374.jpg"
-              alt=""
-            />
-          </div>
-          <div class="movie_infor">
-            <div class="movie_title">大鱼</div>
-            <div class="rating">评分：8.7</div>
-          </div>
-        </div>
-        <div class="movie">
-          <div class="poster">
-            <img
-              src="https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910813120.jpg"
-              alt=""
-            />
-          </div>
-          <div class="movie_infor">
-            <div class="movie_title">霸王别姬</div>
-            <div class="rating">评分：9.5</div>
-          </div>
-        </div>
       </div>
     </div>
+    <script type="text/javascript" src="../js/service.js"></script>
+    <script type="text/javascript" src="../js/view.js"></script>
   </body>
 </html>
