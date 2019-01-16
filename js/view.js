@@ -74,3 +74,24 @@ function renderAllGuideItemNegative() {
     guideItem.classList.remove("active");
   });
 }
+
+function renderMovieDetails(movieDetails) {
+  let movieDetailsNode = document.getElementById("details");
+  let movieDetailsTemplate = document.getElementById("movie_details");
+
+  let originalTitle = movieDetailsTemplate.content.getElementById(
+    "original_title"
+  );
+  let title = movieDetailsTemplate.content.getElementById("translated_title");
+  let year = movieDetailsTemplate.content.getElementById("year");
+
+  title.textContent = movieDetails.title;
+  originalTitle.textContent = movieDetails.original_title;
+  year.textContent = movieDetails.year;
+
+  let movieDetailClone = document.importNode(
+    movieDetailsTemplate.content,
+    true
+  );
+  movieDetailsNode.append(movieDetailClone);
+}
