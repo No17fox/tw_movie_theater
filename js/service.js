@@ -48,7 +48,7 @@ function getMovieInfoByID(movieID) {
 function getMovieInfoByName(movieName) {
   let movies = JSON.parse(localStorage.moviesStorage);
 
-  return Object.values(movies).find(
+  return Object.values(movies).filter(
     movie => movieName === movie.title || movieName === movie.original_title
   );
 }
