@@ -75,7 +75,7 @@ function renderAllGuideItemNegative() {
   });
 }
 
-function renderMovieDetails(movieDetails) {
+function renderMovieDetails(movieDetails, imageURL) {
   let movieDetailsNode = document.getElementById("details");
   let movieDetailsTemplate = document.getElementById("movie_details");
 
@@ -84,10 +84,32 @@ function renderMovieDetails(movieDetails) {
   );
   let title = movieDetailsTemplate.content.getElementById("translated_title");
   let year = movieDetailsTemplate.content.getElementById("year");
+  let moviePoster = movieDetailsTemplate.content.getElementById("movie_poster");
+
+  let directors = movieDetailsTemplate.content.getElementById("directors");
+  let casts = movieDetailsTemplate.content.getElementById("casts");
+  let genres = movieDetailsTemplate.content.getElementById("genres");
+  let countries = movieDetailsTemplate.content.getElementById("countries");
+  let releaseTime = movieDetailsTemplate.content.getElementById("release_time");
+  let aka = movieDetailsTemplate.content.getElementById("aka");
 
   title.textContent = movieDetails.title;
   originalTitle.textContent = movieDetails.original_title;
   year.textContent = movieDetails.year;
+  moviePoster.src = imageURL;
+
+  let directorNames = [];
+  movieDetails.directors.forEach(e => directorNames.push(e.name));
+  directors.textContent = directorNames.join(" / ");
+
+  let castNames = [];
+  movieDetails.casts.forEach(e => castNames.push(e.name));
+  casts.textContent = castNames.join(" / ");
+
+  genres.textContent = movieDetails.genres.join(" / ");
+  countries.textContent = movieDetails.countries.join(" / ");
+  releaseTime.textContent = movieDetails.year;
+  aka.textContent = movieDetails.aka.join(" / ");
 
   let movieDetailClone = document.importNode(
     movieDetailsTemplate.content,

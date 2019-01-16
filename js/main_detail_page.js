@@ -5,6 +5,5 @@ if (localStorage.moviesStorage) {
 }
 
 function main() {
-  console.log("aaa");
   getMovieDetailInfo("1291545", renderMovieDetails);
 }
