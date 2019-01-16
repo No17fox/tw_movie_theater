@@ -42,7 +42,7 @@
     <div class="sidebar">
       <ul class="guide_section">
         <li>
-          <div class="guide_item checked" onclick="main()">
+          <div class="guide_item active" id="guide_item_main" onclick="main()">
             <div class="guide_icon">
               <img src="../images/homepage.svg" alt="" />
             </div>
@@ -50,7 +50,7 @@
           </div>
         </li>
         <li>
-          <div class="guide_item" onclick="showTopMovies()">
+          <div class="guide_item" onclick="showTopMovies(event)">
             <div class="guide_icon">
               <img src="../images/trophy.png" alt="" />
             </div>
@@ -58,7 +58,7 @@
           </div>
         </li>
         <li>
-          <div class="guide_item" onclick="showRandomMovies()">
+          <div class="guide_item" onclick="showRandomMovies(event)">
             <div class="guide_icon">
               <img src="../images/recommendation.svg" alt="" />
             </div>

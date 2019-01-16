@@ -56,3 +56,21 @@ function renderErrorMessage(message) {
   let errorMessageClone = document.importNode(messageTemplate.content, true);
   content.append(errorMessageClone);
 }
+
+function renderGuideItemActive(target) {
+  renderAllGuideItemNegative();
+  target.classList.add("active");
+}
+
+function renderMainGuideItemActive() {
+  renderAllGuideItemNegative();
+  let mainGuideItem = document.getElementById("guide_item_main");
+  mainGuideItem.classList.add("active");
+}
+
+function renderAllGuideItemNegative() {
+  let guideItems = Array.from(document.querySelectorAll(".guide_item"));
+  guideItems.forEach(guideItem => {
+    guideItem.classList.remove("active");
+  });
+}
