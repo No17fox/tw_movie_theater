@@ -5,19 +5,29 @@
 body {
   margin: 0px;
   display: grid;
-  grid-template-columns: 240px auto;
-  grid-template-rows: 10% 90%;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 80px auto;
   grid-template-areas: "navigation navigation" "sidebar content";
 }
 
 .navigation {
   grid-area: navigation;
-  height: 100%;
-  z-index: 1;
+  padding: 0px;
+  height: 80px;
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+}
+
+.navigation .logo{
+  margin: 5px 40px;
 }
 
 .sidebar {
   grid-area: sidebar;
+  position: fixed;
+  z-index: 1;
+  top: 80px;
   background: #f0f0f0;
   font-size: 15px;
   overflow-y: scroll;
