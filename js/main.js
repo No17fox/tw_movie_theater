@@ -12,3 +12,9 @@ function showMoviesByGenre(event) {
   let movies = getMoviesInfoByGenre(genre);
   renderNewMovieCards(movies);
 }
+
+function showMoviesBySearch() {
+  let searchKey = document.getElementById("search_input").value;
+  let result = searchMovies(searchKey);
+  result ? renderNewMovieCards(result) : renderSearchErrorMessage();
+}

@@ -32,3 +32,14 @@ function removeAllMovieCards() {
     posterWall.removeChild(movieCard);
   });
 }
+
+function renderSearchErrorMessage() {
+  removeAllMovieCards();
+
+  let content = document.getElementById("content");
+
+  let errorMessageTemplate = document.getElementById("error_message");
+
+  let errorMessage = document.importNode(errorMessageTemplate.content, true);
+  content.append(errorMessage);
+}

@@ -60,3 +60,17 @@ function getMoviesInfoByGenre(movieGenre) {
     movie.genres.includes(movieGenre)
   );
 }
+
+function searchMovies(searchKey) {
+  let idResult = getMovieInfoByID(searchKey);
+  let nameResult = getMoviesInfoByName(searchKey);
+  let genreResult = getMoviesInfoByGenre(searchKey);
+
+  return idResult
+    ? idResult
+    : nameResult.length
+    ? nameResult
+    : genreResult.length
+    ? genreResult
+    : false;
+}
