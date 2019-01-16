@@ -1,17 +1,20 @@
-require.config({
-  paths: {
-    load: "load"
-  }
-});
+if (localStorage.moviesStorage) {
+  main();
+} else {
+  load.loadMoviesToStorage("../resources/movies.csv", main);
+}
 
-define(["load"], function(load) {
-  "use strict";
+function main() {}
 
-  if (localStorage.moviesStorage) {
-    main();
-  } else {
-    load.loadMoviesToStorage("../resources/movies.csv", main);
-  }
+function showMoviesByGenre(event) {
+  let parentNode = event.target.parentNode;
+  let genre = parentNode.querySelector(".guide_title").innerText;
+  let movies = getMoviesInfoByGenre(genre);
+  renderNewMovieCards(movies);
+}
 
-  function main() {}
-});
+function showMoviesBySearch() {
+  let searchKey = document.getElementById("search_input").value;
+  let result = searchMovies(searchKey);
+  result ? renderNewMovieCards(result) : renderSearchErrorMessage();
+}

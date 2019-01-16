@@ -12,3 +12,34 @@ function renderMovieCard(movie) {
   let movieClone = document.importNode(movieTemplate.content, true);
   posterWall.append(movieClone);
 }
+
+function renderNewMovieCards(movies) {
+  removeAllMovieCards();
+
+  if (Array.isArray(movies)) {
+    movies.forEach(movie => {
+      renderMovieCard(movie);
+    });
+  } else {
+    renderMovieCard(movies);
+  }
+}
+
+function removeAllMovieCards() {
+  let posterWall = document.getElementById("poster_wall");
+  let movieCards = posterWall.querySelectorAll(".movie");
+  movieCards.forEach(movieCard => {
+    posterWall.removeChild(movieCard);
+  });
+}
+
+function renderSearchErrorMessage() {
+  removeAllMovieCards();
+
+  let content = document.getElementById("content");
+
+  let errorMessageTemplate = document.getElementById("error_message");
+
+  let errorMessage = document.importNode(errorMessageTemplate.content, true);
+  content.append(errorMessage);
+}

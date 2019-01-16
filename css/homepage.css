@@ -1,13 +1,13 @@
-@import 'basic.css';
-@import 'navigation.css';
-@import 'movie_card.css';
+@import "basic.css";
+@import "navigation.css";
+@import "movie_card.css";
 
 body {
   margin: 0px;
   display: grid;
   grid-template-columns: 240px auto;
   grid-template-rows: 10% 90%;
-  grid-template-areas: 'navigation navigation' 'sidebar content';
+  grid-template-areas: "navigation navigation" "sidebar content";
 }
 
 .navigation {
@@ -91,4 +91,9 @@ body {
 .poster {
   width: 130px;
   height: 190px;
+}
+
+.search_error_message {
+  font-size: 20px;
+  margin: 40px;
 }
