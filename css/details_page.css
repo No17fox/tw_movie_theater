@@ -5,12 +5,11 @@
 body {
   margin: 0px;
   display: grid;
-  grid-template-rows: 70px auto;
+  grid-template-rows: 80px auto;
   grid-gap: 30px;
 }
 
 .navigation {
-  height: 70px;
   position: fixed;
   grid-row-end: 2;
 }
