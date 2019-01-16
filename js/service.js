@@ -74,3 +74,14 @@ function searchMovies(searchKey) {
     ? genreResult
     : false;
 }
+
+function getMoviesByRange(firstNum, secondNum) {
+  if (firstNum > secondNum) {
+    [firstNum, secondNum] = [secondNum, firstNum];
+  }
+  firstNum = firstNum >= 0 ? firstNum : 0;
+  secondNum = secondNum <= 249 ? secondNum : 249;
+
+  let movies = JSON.parse(localStorage.moviesStorage);
+  return Object.values(movies).slice(firstNum, secondNum + 1);
+}
