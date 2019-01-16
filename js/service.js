@@ -39,3 +39,8 @@ function getMovieDetailInfo(movieId, callback) {
     }
   });
 }
+
+function getMovieInfo(movieID) {
+  let movies = JSON.parse(localStorage.moviesStorage);
+  return movies[movieID];
+}
