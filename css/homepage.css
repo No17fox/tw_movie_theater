@@ -6,12 +6,13 @@ body {
   margin: 0px;
   display: grid;
   grid-template-columns: 240px auto;
-  grid-template-rows: 70px 550px;
+  grid-template-rows: 10% 90%;
   grid-template-areas: 'navigation navigation' 'sidebar content';
 }
 
 .navigation {
   grid-area: navigation;
+  height: 100%;
   z-index: 1;
 }
 
