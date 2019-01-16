@@ -14,8 +14,7 @@ function renderMovieCard(movie) {
 }
 
 function renderNewMovieCards(movies) {
-  removeAllMovieCards();
-
+  cleanContent();
   if (Array.isArray(movies)) {
     movies.forEach(movie => {
       renderMovieCard(movie);
@@ -23,6 +22,11 @@ function renderNewMovieCards(movies) {
   } else {
     renderMovieCard(movies);
   }
+}
+
+function cleanContent() {
+  removeAllMovieCards();
+  removeErrorMessage();
 }
 
 function removeAllMovieCards() {
@@ -33,13 +37,22 @@ function removeAllMovieCards() {
   });
 }
 
-function renderSearchErrorMessage() {
-  removeAllMovieCards();
+function removeErrorMessage() {
+  let errorMessage = document.getElementById("error_message");
+  if (errorMessage) {
+    let parentNode = errorMessage.parentElement;
+    parentNode.removeChild(errorMessage);
+  }
+}
 
+function renderErrorMessage(message) {
+  cleanContent();
   let content = document.getElementById("content");
+  let messageTemplate = document.getElementById("message");
 
-  let errorMessageTemplate = document.getElementById("error_message");
+  let errorMessage = messageTemplate.content.getElementById("error_message");
+  errorMessage.textContent = message;
 
-  let errorMessage = document.importNode(errorMessageTemplate.content, true);
-  content.append(errorMessage);
+  let errorMessageClone = document.importNode(messageTemplate.content, true);
+  content.append(errorMessageClone);
 }

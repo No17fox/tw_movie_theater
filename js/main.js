@@ -4,7 +4,7 @@ if (localStorage.moviesStorage) {
   load.loadMoviesToStorage("../resources/movies.csv", main);
 }
 
-function main() {}
+function main() { }
 
 function showMoviesByGenre(event) {
   let parentNode = event.target.parentNode;
@@ -14,7 +14,9 @@ function showMoviesByGenre(event) {
 }
 
 function showMoviesBySearch() {
-  let searchKey = document.getElementById("search_input").value;
+  let searchInput = document.getElementById("search_input");
+  let searchKey = searchInput.value;
   let result = searchMovies(searchKey);
-  result ? renderNewMovieCards(result) : renderSearchErrorMessage();
+  result ? renderNewMovieCards(result) : renderErrorMessage('对不起，无法找到你想要的电影，请重新搜索...');
+  searchInput.value = '';
 }
