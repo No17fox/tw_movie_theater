@@ -19,7 +19,7 @@ body {
   top: 0px;
 }
 
-.navigation .logo{
+.navigation .logo {
   margin: 5px 40px;
 }
 
@@ -30,6 +30,7 @@ body {
   top: 80px;
   background: #f0f0f0;
   font-size: 15px;
+  height: 100%;
   overflow-y: scroll;
 }
 
