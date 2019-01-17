@@ -238,3 +238,21 @@ function renderMovieCasts(casts) {
     castsDetail.append(castClone);
   });
 }
+
+function renderRecommends(movies) {
+  let recommend = document.getElementById("recommendation");
+
+  let movieTemplate = document.getElementById("movie_card");
+  let poster = movieTemplate.content.getElementById("poster");
+  let title = movieTemplate.content.getElementById("title");
+  let rating = movieTemplate.content.getElementById("rating");
+
+  movies.forEach(movie => {
+    poster.src = movie.image;
+    title.textContent = movie.title;
+    rating.textContent = movie.rating;
+
+    let movieClone = document.importNode(movieTemplate.content, true);
+    recommend.append(movieClone);
+  });
+}
