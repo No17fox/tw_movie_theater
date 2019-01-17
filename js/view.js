@@ -95,6 +95,9 @@ function renderMovieDetails(movieDetails) {
   let releaseTime = movieDetailsTemplate.content.getElementById("release_time");
   let durations = movieDetailsTemplate.content.getElementById("durations");
   let aka = movieDetailsTemplate.content.getElementById("aka");
+  let rating = movieDetailsTemplate.content.getElementById("movie_rating");
+  let summary = movieDetailsTemplate.content.getElementById("summary");
+  let movieStar = movieDetailsTemplate.content.getElementById("movie_star");
 
   title.textContent = movieDetails.title;
   originalTitle.textContent = movieDetails.original_title;
@@ -119,10 +122,34 @@ function renderMovieDetails(movieDetails) {
   releaseTime.textContent = movieDetails.year;
   durations.textContent = movieDetails.durations.join(" / ");
   aka.textContent = movieDetails.aka.join(" / ");
+  rating.textContent = movieDetails.rating.average;
+  summary.textContent = movieDetails.summary;
+
+  movieStar.append(renderStars(movieDetails.rating.average / 2));
 
   let movieDetailClone = document.importNode(
     movieDetailsTemplate.content,
     true
   );
   movieDetailsNode.append(movieDetailClone);
+}
+
+function renderStars(value) {
+  let starTemplate = document.getElementById("star");
+  let starImg = starTemplate.content.querySelector("img");
+  let stars = document.createElement("div");
+  stars.className = "star";
+
+  for (let i = 0; i < Math.floor(value); i++) {
+    starImg.src = "../images/star_fill.svg";
+    let starClone = document.importNode(starImg);
+    stars.append(starClone);
+  }
+
+  if (value - Math.floor(value) >= 0.2) {
+    starImg.src = "../images/star_half.svg";
+    let starClone = document.importNode(starImg);
+    stars.append(starClone);
+  }
+  return stars;
 }
