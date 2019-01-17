@@ -49,3 +49,11 @@ function showMoviesBySearch(event) {
     searchInput.value = "";
   }
 }
+
+function storageSelectedMovieId(event) {
+  let parentNode = event.target.parentNode;
+  while (!Array.from(parentNode.classList).includes("movie")) {
+    parentNode = parentNode.parentNode;
+  }
+  localStorage.selectedMovie = parentNode.getAttribute("movie_id");
+}

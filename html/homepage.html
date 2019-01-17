@@ -142,8 +142,11 @@
     <div class="content" id="content">
       <div class="poster_wall" id="poster_wall">
         <template id="movie_card">
-          <div class="movie">
-            <a href="./details_page.html">
+          <div class="movie" movie_id="">
+            <a
+              href="./details_page.html"
+              onclick="storageSelectedMovieId(event)"
+            >
               <div class="poster"><img id="poster" src="" alt="" /></div>
               <div class="movie_basic_infor">
                 <div class="movie_title" id="title"></div>
