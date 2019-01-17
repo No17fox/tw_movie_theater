@@ -9,6 +9,10 @@ body {
   grid-gap: 30px;
 }
 
+span {
+  white-space: pre-wrap;
+}
+
 .navigation {
   position: fixed;
   grid-row-end: 2;
