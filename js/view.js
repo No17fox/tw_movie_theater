@@ -99,7 +99,11 @@ function renderMovieDetails(movieDetails) {
   let summary = movieDetailsTemplate.content.getElementById("summary");
   let movieStar = movieDetailsTemplate.content.getElementById("movie_star");
   title.textContent = movieDetails.title;
-  originalTitle.textContent = movieDetails.original_title;
+
+  if (movieDetails.original_title != movieDetails.title) {
+    originalTitle.textContent = movieDetails.original_title;
+  }
+
   year.textContent = movieDetails.year;
   moviePoster.src = movieDetails.images.small;
 
