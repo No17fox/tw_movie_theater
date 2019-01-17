@@ -5,9 +5,9 @@ if (localStorage.moviesStorage) {
 }
 
 function main() {
-  getMovieDetailInfo("1291561", renderMovieDetails);
-  getMovieDiscuss("1291561", "comments", renderAllComments, 4);
-  getMovieDiscuss("1291561", "reviews", renderAllReviews, 4);
+  getMovieDetailInfo("1291843", renderMovieDetails);
+  getMovieDiscuss("1291843", "comments", renderAllComments, 4);
+  getMovieDiscuss("1291843", "reviews", renderAllReviews, 4);
 }
 
 function expendReview(element) {
