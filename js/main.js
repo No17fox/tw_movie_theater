@@ -1,7 +1,7 @@
 if (localStorage.moviesStorage) {
   main();
 } else {
-  load.loadMoviesToStorage("../resources/movies.csv", main);
+  loadMoviesToStorage("../resources/movies.csv", main);
 }
 
 function main() {

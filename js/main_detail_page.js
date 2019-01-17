@@ -1,7 +1,7 @@
 if (localStorage.moviesStorage) {
   showMovieDetailPage();
 } else {
-  load.loadMoviesToStorage("../resources/movies.csv", showMovieDetailPage);
+  loadMoviesToStorage("../resources/movies.csv", showMovieDetailPage);
 }
 
 function showMovieDetailPage() {
