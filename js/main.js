@@ -42,12 +42,19 @@ function showMoviesByGenre(event) {
   renderGuideItemActive(event.target);
 }
 
-function showMoviesBySearch() {
+function showMoviesBySearch(event) {
   let searchInput = document.getElementById("search_input");
   let searchKey = searchInput.value;
-  let result = searchMovies(searchKey);
-  result
-    ? renderNewMovieCards(result)
-    : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
-  searchInput.value = "";
+
+  if (
+    searchKey &&
+    (event.type === "click" ||
+      (event.type === "keypress" && event.keyCode === 13))
+  ) {
+    let result = searchMovies(searchKey);
+    result
+      ? renderNewMovieCards(result)
+      : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
+    searchInput.value = "";
+  }
 }

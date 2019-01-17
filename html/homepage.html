@@ -31,10 +31,11 @@
           class="search_bar"
           type="search"
           name="search"
-          placeholder="搜索"
+          placeholder="请输入想要搜索的电影，回车即可搜索…"
           autofocus="autofocus"
+          onkeypress="showMoviesBySearch(event)"
         />
-        <button class="search_btn" onclick="showMoviesBySearch()">
+        <button class="search_btn" onclick="showMoviesBySearch(event)">
           <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
         </button>
       </div>
