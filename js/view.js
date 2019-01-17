@@ -75,7 +75,7 @@ function renderAllGuideItemNegative() {
   });
 }
 
-function renderMovieDetails(movieDetails, imageURL) {
+function renderMovieDetails(movieDetails) {
   let movieDetailsNode = document.getElementById("details");
   let movieDetailsTemplate = document.getElementById("movie_details");
 
@@ -87,20 +87,30 @@ function renderMovieDetails(movieDetails, imageURL) {
   let moviePoster = movieDetailsTemplate.content.getElementById("movie_poster");
 
   let directors = movieDetailsTemplate.content.getElementById("directors");
+  let writers = movieDetailsTemplate.content.getElementById("writers");
   let casts = movieDetailsTemplate.content.getElementById("casts");
   let genres = movieDetailsTemplate.content.getElementById("genres");
   let countries = movieDetailsTemplate.content.getElementById("countries");
+  let languages = movieDetailsTemplate.content.getElementById("languages");
   let releaseTime = movieDetailsTemplate.content.getElementById("release_time");
+  let durations = movieDetailsTemplate.content.getElementById("durations");
   let aka = movieDetailsTemplate.content.getElementById("aka");
+  let rating = movieDetailsTemplate.content.getElementById("movie_rating");
+  let summary = movieDetailsTemplate.content.getElementById("summary");
+  let movieStar = movieDetailsTemplate.content.getElementById("movie_star");
 
   title.textContent = movieDetails.title;
   originalTitle.textContent = movieDetails.original_title;
   year.textContent = movieDetails.year;
-  moviePoster.src = imageURL;
+  moviePoster.src = movieDetails.images.small;
 
   let directorNames = [];
   movieDetails.directors.forEach(e => directorNames.push(e.name));
   directors.textContent = directorNames.join(" / ");
+
+  let writerNames = [];
+  movieDetails.writers.forEach(e => writerNames.push(e.name));
+  writers.textContent = writerNames.join(" / ");
 
   let castNames = [];
   movieDetails.casts.forEach(e => castNames.push(e.name));
@@ -108,8 +118,14 @@ function renderMovieDetails(movieDetails, imageURL) {
 
   genres.textContent = movieDetails.genres.join(" / ");
   countries.textContent = movieDetails.countries.join(" / ");
+  languages.textContent = movieDetails.languages.join(" / ");
   releaseTime.textContent = movieDetails.year;
+  durations.textContent = movieDetails.durations.join(" / ");
   aka.textContent = movieDetails.aka.join(" / ");
+  rating.textContent = movieDetails.rating.average;
+  summary.textContent = movieDetails.summary;
+
+  movieStar.append(renderStars(movieDetails.rating.average / 2));
 
   let movieDetailClone = document.importNode(
     movieDetailsTemplate.content,
@@ -150,20 +166,29 @@ function renderUserInfor(data) {
   let time = userInforTemplate.content.getElementById("time");
 
   userName.textContent = data.author.name;
-
-  star = renderStar("../images/star_fill.svg");
-  userStar.appendChild(star);
-
+  userStar.append(renderStars(data.rating.value));
   time.textContent = data.created_at;
 
   let userInforClone = document.importNode(userInforTemplate.content, true);
   return userInforClone;
 }
 
-function renderStar(imageURL) {
+function renderStars(value) {
   let starTemplate = document.getElementById("star");
-  let star = starTemplate.content.getElementById("star_img");
-  star.src = imageURL;
-  let starClone = document.importNode(starTemplate.content, true);
-  return starClone;
+  let starImg = starTemplate.content.querySelector("img");
+  let stars = document.createElement("div");
+  stars.className = "star";
+
+  for (let i = 0; i < Math.floor(value); i++) {
+    starImg.src = "../images/star_fill.svg";
+    let starClone = document.importNode(starImg);
+    stars.append(starClone);
+  }
+
+  if (value - Math.floor(value) >= 0.2) {
+    starImg.src = "../images/star_half.svg";
+    let starClone = document.importNode(starImg);
+    stars.append(starClone);
+  }
+  return stars;
 }
