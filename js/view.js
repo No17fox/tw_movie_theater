@@ -134,6 +134,32 @@ function renderMovieDetails(movieDetails) {
   renderMovieCasts(movieDetails.casts);
 }
 
+function renderAllComments(allComments) {
+  allComments.comments.forEach(e => renderMovieComment(e));
+}
+
+function renderMovieComment(movieComment) {
+  let movieCommentNode = document.getElementById("top_comments");
+  let movieCommentTemplate = document.getElementById("comment");
+
+  let commentUser = movieCommentTemplate.content.getElementById("comment_user");
+  let commentContent = movieCommentTemplate.content.getElementById(
+    "comment_content"
+  );
+
+  let userInfor = renderUserInfor(movieComment);
+  commentUser.innerHTML = "";
+  commentUser.append(userInfor);
+
+  commentContent.textContent = movieComment.content;
+
+  let movieCommentClone = document.importNode(
+    movieCommentTemplate.content,
+    true
+  );
+  movieCommentNode.append(movieCommentClone);
+}
+
 function renderAllReviews(allReviews) {
   allReviews.reviews.forEach(e => renderMovieReview(e));
 }
@@ -144,15 +170,16 @@ function renderMovieReview(movieReview) {
 
   let reviewUser = movieReviewTemplate.content.getElementById("review_user");
   let reviewTitle = movieReviewTemplate.content.getElementById("review_title");
-  let review_content = movieReviewTemplate.content.getElementById(
+  let reviewContent = movieReviewTemplate.content.getElementById(
     "review_content"
   );
 
   let userInfor = renderUserInfor(movieReview);
+  reviewUser.innerHTML = "";
   reviewUser.append(userInfor);
 
   reviewTitle.textContent = movieReview.title;
-  review_content.textContent = movieReview.summary;
+  reviewContent.textContent = movieReview.summary;
 
   let movieReviewClone = document.importNode(movieReviewTemplate.content, true);
   movieReviewNode.append(movieReviewClone);
@@ -166,6 +193,7 @@ function renderUserInfor(data) {
   let time = userInforTemplate.content.getElementById("time");
 
   userName.textContent = data.author.name;
+  userStar.innerHTML = "";
   userStar.append(renderStars(data.rating.value));
   time.textContent = data.created_at;
 

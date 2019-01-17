@@ -6,7 +6,6 @@ if (localStorage.moviesStorage) {
 
 function main() {
   getMovieDetailInfo("1291545", renderMovieDetails);
-  getMovieDiscuss("1291545", "reviews", renderAllReviews, 1);
-  let movies = getRandomMovies(4);
-  renderRecommends(movies);
+  getMovieDiscuss("1291545", "comments", renderAllComments, 4);
+  getMovieDiscuss("1291545", "reviews", renderAllReviews, 4);
 }

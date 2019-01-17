@@ -157,6 +157,15 @@ body {
   margin-bottom: 20px;
 }
 
+a {
+  color: rgb(90, 23, 134);
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 .recommendation {
   display: grid;
   grid-template-columns: 1fr 1fr;
