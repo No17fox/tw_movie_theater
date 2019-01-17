@@ -4,10 +4,12 @@ function renderMovieCard(movie) {
   let poster = movieTemplate.content.getElementById("poster");
   let title = movieTemplate.content.getElementById("title");
   let rating = movieTemplate.content.getElementById("rating");
+  let movieNode = movieTemplate.content.querySelector(".movie");
 
   poster.src = movie.image;
   title.textContent = movie.title;
   rating.textContent = movie.rating;
+  movieNode.setAttribute("movie_id", movie.id);
 
   let movieClone = document.importNode(movieTemplate.content, true);
   posterWall.append(movieClone);
@@ -242,11 +244,13 @@ function renderRecommends(movies) {
   let poster = movieTemplate.content.getElementById("poster");
   let title = movieTemplate.content.getElementById("title");
   let rating = movieTemplate.content.getElementById("rating");
+  let movieNode = movieTemplate.content.querySelector(".movie");
 
   movies.forEach(movie => {
     poster.src = movie.image;
     title.textContent = movie.title;
     rating.textContent = movie.rating;
+    movieNode.setAttribute("movie_id", movie.id);
 
     let movieClone = document.importNode(movieTemplate.content, true);
     recommend.append(movieClone);

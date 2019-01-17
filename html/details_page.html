@@ -18,7 +18,11 @@
   </head>
   <body>
     <div class="navigation">
-      <div class="logo"><img src="../images/logo_with_text.png" alt="" /></div>
+      <div class="logo">
+        <a href="./homepage.html">
+          <img src="../images/logo_with_text.png" alt=""
+        /></a>
+      </div>
       <div class="search">
         <input
           class="search_bar"
@@ -145,12 +149,17 @@
         <div class="section_title">相似推荐</div>
         <div class="recommendation" id="recommendation">
           <template id="movie_card">
-            <div class="movie">
-              <div class="poster"><img id="poster" src="" alt="" /></div>
-              <div class="movie_basic_infor">
-                <div class="movie_title" id="title"></div>
-                <div class="rating">评分： <span id="rating"></span></div>
-              </div>
+            <div class="movie" movie_id="">
+              <a
+                href="./details_page.html"
+                onclick="storageSelectedMovieId(event)"
+              >
+                <div class="poster"><img id="poster" src="" alt="" /></div>
+                <div class="movie_basic_infor">
+                  <div class="movie_title" id="title"></div>
+                  <div class="rating">评分：<span id="rating"></span></div>
+                </div>
+              </a>
             </div>
           </template>
         </div>
@@ -162,6 +171,7 @@
     <div id="kkk"></div>
     <script type="text/javascript" src="../js/service.js"></script>
     <script type="text/javascript" src="../js/view.js"></script>
+    <!-- <script type="text/javascript" src="../js/main.js"></script> -->
     <script type="text/javascript" src="../js/main_detail_page.js"></script>
   </body>
 </html>

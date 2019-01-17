@@ -1,11 +1,26 @@
 if (localStorage.moviesStorage) {
-  main();
+  showMovieDetailPage();
 } else {
-  load.loadMoviesToStorage("../resources/movies.csv", main);
+  load.loadMoviesToStorage("../resources/movies.csv", showMovieDetailPage);
 }
 
-function main() {
-  getMovieDetailInfo("1291545", renderMovieDetails);
-  getMovieDiscuss("1291545", "comments", renderAllComments, 4);
-  getMovieDiscuss("1291545", "reviews", renderAllReviews, 4);
+function showMovieDetailPage() {
+  let movieID = localStorage.selectedMovie || "1291545";
+  getMovieDetailInfo(movieID, renderMovieDetails);
+  getMovieDiscuss(movieID, "comments", renderAllComments, 4);
+  getMovieDiscuss(movieID, "reviews", renderAllReviews, 4);
+  showRecommends();
+}
+
+function showRecommends() {
+  let movies = getRandomMovies(4);
+  renderRecommends(movies);
+}
+
+function storageSelectedMovieId(event) {
+  let parentNode = event.target.parentNode;
+  while (!Array.from(parentNode.classList).includes("movie")) {
+    parentNode = parentNode.parentNode;
+  }
+  localStorage.selectedMovie = parentNode.getAttribute("movie_id");
 }
