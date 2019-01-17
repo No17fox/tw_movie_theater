@@ -5,7 +5,11 @@ if (localStorage.moviesStorage) {
 }
 
 function main() {
-  showMoviesByRange(0, 23);
+  if (localStorage.searchContent) {
+    showMoviesBySearch(event);
+  } else {
+    showMoviesByRange(0, 23);
+  }
   renderMainGuideItemActive();
 }
 
@@ -35,13 +39,20 @@ function showMoviesByGenre(event) {
 
 function showMoviesBySearch(event) {
   let searchInput = document.getElementById("search_input");
-  let searchKey = searchInput.value;
 
-  if (
-    searchKey &&
+  if (localStorage.searchContent) {
+    let searchKey = localStorage.searchContent;
+    let result = searchMovies(searchKey);
+    result
+      ? renderNewMovieCards(result)
+      : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
+    localStorage.searchContent = "";
+  } else if (
+    searchInput.value &&
     (event.type === "click" ||
       (event.type === "keypress" && event.keyCode === 13))
   ) {
+    searchKey = searchInput.value;
     let result = searchMovies(searchKey);
     result
       ? renderNewMovieCards(result)
