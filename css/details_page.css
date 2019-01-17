@@ -187,3 +187,7 @@ a:hover {
   align-items: center;
   font-size: 14px;
 }
+
+.hide {
+  display: none;
+}
