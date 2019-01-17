@@ -147,7 +147,14 @@
               href="./details_page.html"
               onclick="storageSelectedMovieId(event)"
             >
-              <div class="poster"><img id="poster" src="" alt="" /></div>
+              <div class="poster">
+                <img
+                  id="poster"
+                  src=""
+                  onerror="this.src='../images/image_load_error.png'"
+                  alt=""
+                />
+              </div>
               <div class="movie_basic_infor">
                 <div class="movie_title" id="title"></div>
                 <div class="rating">评分：<span id="rating"></span></div>
