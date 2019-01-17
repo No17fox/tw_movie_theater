@@ -149,6 +149,7 @@ function renderMovieReview(movieReview) {
   );
 
   let userInfor = renderUserInfor(movieReview);
+  reviewUser.innerHTML = "";
   reviewUser.append(userInfor);
 
   reviewTitle.textContent = movieReview.title;
@@ -166,6 +167,7 @@ function renderUserInfor(data) {
   let time = userInforTemplate.content.getElementById("time");
 
   userName.textContent = data.author.name;
+  userStar.innerHTML = "";
   userStar.append(renderStars(data.rating.value));
   time.textContent = data.created_at;
 
