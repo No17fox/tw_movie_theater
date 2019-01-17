@@ -56,6 +56,12 @@ body {
   border-radius: 8px;
 }
 
+.infor p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .item,
 .item_content,
 .summary,
@@ -65,6 +71,7 @@ body {
 }
 
 .infor {
+  width: 400px;
   margin: 20px 25px 0px 0px;
   padding-right: 25px;
   line-height: 12px;
@@ -104,8 +111,9 @@ body {
 }
 
 .cast_member {
+  width: 85%;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 20px;
 }
 
@@ -186,4 +194,8 @@ a:hover {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+
+.hide {
+  display: none;
 }

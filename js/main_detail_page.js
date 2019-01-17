@@ -24,3 +24,23 @@ function storageSelectedMovieId(event) {
   }
   localStorage.selectedMovie = parentNode.getAttribute("movie_id");
 }
+
+function expendReview(element) {
+  if ($(element).text() === "(展开)") {
+    $(element).text("(折叠)");
+    $(element)
+      .prevAll("#review_sammary")
+      .addClass("hide");
+    $(element)
+      .prevAll("#review_content")
+      .removeClass("hide");
+  } else {
+    $(element).text("(展开)");
+    $(element)
+      .prevAll("#review_sammary")
+      .removeClass("hide");
+    $(element)
+      .prevAll("#review_content")
+      .addClass("hide");
+  }
+}

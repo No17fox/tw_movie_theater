@@ -101,7 +101,11 @@ function renderMovieDetails(movieDetails) {
   let summary = movieDetailsTemplate.content.getElementById("summary");
   let movieStar = movieDetailsTemplate.content.getElementById("movie_star");
   title.textContent = movieDetails.title;
-  originalTitle.textContent = movieDetails.original_title;
+
+  if (movieDetails.original_title != movieDetails.title) {
+    originalTitle.textContent = movieDetails.original_title;
+  }
+
   year.textContent = movieDetails.year;
   moviePoster.src = movieDetails.images.small;
 
@@ -172,6 +176,9 @@ function renderMovieReview(movieReview) {
 
   let reviewUser = movieReviewTemplate.content.getElementById("review_user");
   let reviewTitle = movieReviewTemplate.content.getElementById("review_title");
+  let reviewSammary = movieReviewTemplate.content.getElementById(
+    "review_sammary"
+  );
   let reviewContent = movieReviewTemplate.content.getElementById(
     "review_content"
   );
@@ -181,7 +188,8 @@ function renderMovieReview(movieReview) {
   reviewUser.append(userInfor);
 
   reviewTitle.textContent = movieReview.title;
-  reviewContent.textContent = movieReview.summary;
+  reviewSammary.textContent = movieReview.summary;
+  reviewContent.textContent = movieReview.content;
 
   let movieReviewClone = document.importNode(movieReviewTemplate.content, true);
   movieReviewNode.append(movieReviewClone);
