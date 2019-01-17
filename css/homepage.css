@@ -31,7 +31,6 @@ body {
   background: #f0f0f0;
   font-size: 15px;
   height: 100%;
-  overflow-y: scroll;
 }
 
 .guide_section {
@@ -43,7 +42,7 @@ body {
 
 .guide_item {
   margin: 0px;
-  padding: 0px 40px;
+  padding: 0px 50px;
   height: 40px;
   display: flex;
   align-items: center;
