@@ -56,6 +56,12 @@ body {
   border-radius: 8px;
 }
 
+.infor p {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .item,
 .item_content,
 .summary,
