@@ -117,3 +117,53 @@ function renderMovieDetails(movieDetails, imageURL) {
   );
   movieDetailsNode.append(movieDetailClone);
 }
+
+function renderAllReviews(allReviews) {
+  allReviews.reviews.forEach(e => renderMovieReview(e));
+}
+
+function renderMovieReview(movieReview) {
+  let movieReviewNode = document.getElementById("top_reviews");
+  let movieReviewTemplate = document.getElementById("review");
+
+  let reviewUser = movieReviewTemplate.content.getElementById("review_user");
+  let reviewTitle = movieReviewTemplate.content.getElementById("review_title");
+  let review_content = movieReviewTemplate.content.getElementById(
+    "review_content"
+  );
+
+  let userInfor = renderUserInfor(movieReview);
+  reviewUser.append(userInfor);
+
+  reviewTitle.textContent = movieReview.title;
+  review_content.textContent = movieReview.summary;
+
+  let movieReviewClone = document.importNode(movieReviewTemplate.content, true);
+  movieReviewNode.append(movieReviewClone);
+}
+
+function renderUserInfor(data) {
+  let userInforTemplate = document.getElementById("user_infor");
+
+  let userName = userInforTemplate.content.getElementById("user_name");
+  let userStar = userInforTemplate.content.getElementById("user_star");
+  let time = userInforTemplate.content.getElementById("time");
+
+  userName.textContent = data.author.name;
+
+  star = renderStar("../images/star_fill.svg");
+  userStar.appendChild(star);
+
+  time.textContent = data.created_at;
+
+  let userInforClone = document.importNode(userInforTemplate.content, true);
+  return userInforClone;
+}
+
+function renderStar(imageURL) {
+  let starTemplate = document.getElementById("star");
+  let star = starTemplate.content.getElementById("star_img");
+  star.src = imageURL;
+  let starClone = document.importNode(starTemplate.content, true);
+  return starClone;
+}
