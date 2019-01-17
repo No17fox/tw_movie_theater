@@ -22,7 +22,7 @@ body {
   grid-template-columns: 3fr 1fr;
 }
 
-.movie_title {
+.movie_detail_title {
   font-size: 25px;
   font-weight: bold;
 }

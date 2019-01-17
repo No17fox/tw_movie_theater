@@ -92,3 +92,17 @@ function getMovieBySequence(sequence) {
   let movies = JSON.parse(localStorage.moviesStorage);
   return Object.values(movies)[sequence];
 }
+
+function getRandomMovies(count) {
+  let movies = [];
+  for (let i = 0; i < count; i++) {
+    let sequence = getRandomNumByRange(0, 249);
+    let movie = getMovieBySequence(sequence);
+    movies.push(movie);
+  }
+  return movies;
+}
+
+function getRandomNumByRange(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}

@@ -20,18 +20,9 @@ function showTopMovies(event) {
 }
 
 function showRandomMovies(event, count = 12) {
-  let movieArr = [];
-  for (let i = 0; i < count; i++) {
-    let sequence = getRandomNumByRange(0, 249);
-    let movie = getMovieBySequence(sequence);
-    movieArr.push(movie);
-  }
-  renderNewMovieCards(movieArr);
+  let movies = getRandomMovies(count);
+  renderNewMovieCards(movies);
   renderGuideItemActive(event.target);
-}
-
-function getRandomNumByRange(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
 }
 
 function showMoviesByGenre(event) {
