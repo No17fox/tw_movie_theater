@@ -98,7 +98,6 @@ function renderMovieDetails(movieDetails) {
   let rating = movieDetailsTemplate.content.getElementById("movie_rating");
   let summary = movieDetailsTemplate.content.getElementById("summary");
   let movieStar = movieDetailsTemplate.content.getElementById("movie_star");
-
   title.textContent = movieDetails.title;
   originalTitle.textContent = movieDetails.original_title;
   year.textContent = movieDetails.year;
@@ -132,24 +131,39 @@ function renderMovieDetails(movieDetails) {
     true
   );
   movieDetailsNode.append(movieDetailClone);
+  renderMovieCasts(movieDetails.casts);
 }
 
 function renderStars(value) {
   let starTemplate = document.getElementById("star");
   let starImg = starTemplate.content.querySelector("img");
   let stars = document.createElement("div");
-  stars.className = "star";
 
   for (let i = 0; i < Math.floor(value); i++) {
     starImg.src = "../images/star_fill.svg";
-    let starClone = document.importNode(starImg);
+    let starClone = document.importNode(starImg, true);
     stars.append(starClone);
   }
 
   if (value - Math.floor(value) >= 0.2) {
     starImg.src = "../images/star_half.svg";
-    let starClone = document.importNode(starImg);
+    let starClone = document.importNode(starImg, true);
     stars.append(starClone);
   }
   return stars;
+}
+
+function renderMovieCasts(casts) {
+  let castTemplate = document.getElementById("cast_member");
+  let castImg = castTemplate.content.getElementById("cast_img");
+  let castName = castTemplate.content.getElementById("cast_name");
+  let castsDetail = document.getElementById("casts_detail");
+
+  casts.forEach(cast => {
+    castImg.src = cast.avatars.small;
+    castImg.alt = cast.name;
+    castName.textContent = cast.name;
+    let castClone = document.importNode(castTemplate.content, true);
+    castsDetail.append(castClone);
+  });
 }
