@@ -181,6 +181,10 @@ function renderMovieReview(movieReview) {
   reviewTitle.textContent = movieReview.title;
   reviewContent.textContent = movieReview.summary;
 
+  let showMore = document.createElement("a");
+  showMore.textContent = "(展开)";
+  reviewContent.append(showMore);
+
   let movieReviewClone = document.importNode(movieReviewTemplate.content, true);
   movieReviewNode.append(movieReviewClone);
 }
