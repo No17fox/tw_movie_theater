@@ -129,7 +129,15 @@ body {
 }
 
 .user_rating img {
-  width: 2%;
+  width: 12px;
+  height: 12px;
+}
+
+.user_name,
+.user_rating,
+.time {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .user_infor,

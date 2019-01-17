@@ -134,6 +134,45 @@ function renderMovieDetails(movieDetails) {
   renderMovieCasts(movieDetails.casts);
 }
 
+function renderAllReviews(allReviews) {
+  allReviews.reviews.forEach(e => renderMovieReview(e));
+}
+
+function renderMovieReview(movieReview) {
+  let movieReviewNode = document.getElementById("top_reviews");
+  let movieReviewTemplate = document.getElementById("review");
+
+  let reviewUser = movieReviewTemplate.content.getElementById("review_user");
+  let reviewTitle = movieReviewTemplate.content.getElementById("review_title");
+  let review_content = movieReviewTemplate.content.getElementById(
+    "review_content"
+  );
+
+  let userInfor = renderUserInfor(movieReview);
+  reviewUser.append(userInfor);
+
+  reviewTitle.textContent = movieReview.title;
+  review_content.textContent = movieReview.summary;
+
+  let movieReviewClone = document.importNode(movieReviewTemplate.content, true);
+  movieReviewNode.append(movieReviewClone);
+}
+
+function renderUserInfor(data) {
+  let userInforTemplate = document.getElementById("user_infor");
+
+  let userName = userInforTemplate.content.getElementById("user_name");
+  let userStar = userInforTemplate.content.getElementById("user_star");
+  let time = userInforTemplate.content.getElementById("time");
+
+  userName.textContent = data.author.name;
+  userStar.append(renderStars(data.rating.value));
+  time.textContent = data.created_at;
+
+  let userInforClone = document.importNode(userInforTemplate.content, true);
+  return userInforClone;
+}
+
 function renderStars(value) {
   let starTemplate = document.getElementById("star");
   let starImg = starTemplate.content.querySelector("img");
