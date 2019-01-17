@@ -32,8 +32,7 @@ function getMovieDetailInfo(movieId, callback) {
       udid: ""
     },
     success: function(json) {
-      let image = getMovieInfoByID(movieId).image;
-      callback(json, image);
+      callback(json);
     },
     error: function() {
       console.log(`failed to get movie detail information`);

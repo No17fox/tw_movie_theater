@@ -75,7 +75,7 @@ function renderAllGuideItemNegative() {
   });
 }
 
-function renderMovieDetails(movieDetails, imageURL) {
+function renderMovieDetails(movieDetails) {
   let movieDetailsNode = document.getElementById("details");
   let movieDetailsTemplate = document.getElementById("movie_details");
 
@@ -87,20 +87,27 @@ function renderMovieDetails(movieDetails, imageURL) {
   let moviePoster = movieDetailsTemplate.content.getElementById("movie_poster");
 
   let directors = movieDetailsTemplate.content.getElementById("directors");
+  let writers = movieDetailsTemplate.content.getElementById("writers");
   let casts = movieDetailsTemplate.content.getElementById("casts");
   let genres = movieDetailsTemplate.content.getElementById("genres");
   let countries = movieDetailsTemplate.content.getElementById("countries");
+  let languages = movieDetailsTemplate.content.getElementById("languages");
   let releaseTime = movieDetailsTemplate.content.getElementById("release_time");
+  let durations = movieDetailsTemplate.content.getElementById("durations");
   let aka = movieDetailsTemplate.content.getElementById("aka");
 
   title.textContent = movieDetails.title;
   originalTitle.textContent = movieDetails.original_title;
   year.textContent = movieDetails.year;
-  moviePoster.src = imageURL;
+  moviePoster.src = movieDetails.images.small;
 
   let directorNames = [];
   movieDetails.directors.forEach(e => directorNames.push(e.name));
   directors.textContent = directorNames.join(" / ");
+
+  let writerNames = [];
+  movieDetails.writers.forEach(e => writerNames.push(e.name));
+  writers.textContent = writerNames.join(" / ");
 
   let castNames = [];
   movieDetails.casts.forEach(e => castNames.push(e.name));
@@ -108,7 +115,9 @@ function renderMovieDetails(movieDetails, imageURL) {
 
   genres.textContent = movieDetails.genres.join(" / ");
   countries.textContent = movieDetails.countries.join(" / ");
+  languages.textContent = movieDetails.languages.join(" / ");
   releaseTime.textContent = movieDetails.year;
+  durations.textContent = movieDetails.durations.join(" / ");
   aka.textContent = movieDetails.aka.join(" / ");
 
   let movieDetailClone = document.importNode(
