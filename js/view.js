@@ -61,19 +61,25 @@ function renderErrorMessage(message) {
 
 function renderGuideItemActive(target) {
   renderAllGuideItemNegative();
-  target.classList.add("active");
+  $(target)
+    .parents("li")
+    .addClass("active");
 }
 
 function renderMainGuideItemActive() {
   renderAllGuideItemNegative();
   let mainGuideItem = document.getElementById("guide_item_main");
-  mainGuideItem.classList.add("active");
+  $(mainGuideItem)
+    .parent("li")
+    .addClass("active");
 }
 
 function renderAllGuideItemNegative() {
   let guideItems = Array.from(document.querySelectorAll(".guide_item"));
   guideItems.forEach(guideItem => {
-    guideItem.classList.remove("active");
+    $(guideItem)
+      .parent("li")
+      .removeClass("active");
   });
 }
 
