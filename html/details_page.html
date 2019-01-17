@@ -25,13 +25,15 @@
       </div>
       <div class="search">
         <input
+          id="search_input"
           class="search_bar"
           type="search"
           name="search"
-          placeholder="搜索"
+          placeholder="请输入想要搜索的电影，回车即可搜索…"
           autofocus="autofocus"
+          onkeypress="saveSearchKey(event)"
         />
-        <button class="search_btn">
+        <button class="search_btn" onclick="saveSearchKey(event)">
           <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
         </button>
       </div>
