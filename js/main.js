@@ -5,12 +5,16 @@ if (localStorage.moviesStorage) {
 }
 
 function main() {
-  if (localStorage.searchContent) {
+  if (window.location.search.includes("search")) {
     showMoviesBySearch(event);
   } else {
-    showMoviesByRange(0, 23);
-    $("#load_more").removeClass("hide");
+    backToMainGuide();
   }
+}
+
+function backToMainGuide() {
+  showMoviesByRange(0, 23);
+  $("#load_more").removeClass("hide");
   renderMainGuideItemActive();
 }
 
@@ -43,25 +47,26 @@ function showMoviesByGenre(event) {
 
 function showMoviesBySearch(event) {
   let searchInput = document.getElementById("search_input");
+  let urlParams = window.location.search;
+  let searchKey = decodeURI(urlParams.match(/search=.*/g)[0].slice(7));
 
-  if (localStorage.searchContent) {
-    let searchKey = localStorage.searchContent;
-    let result = searchMovies(searchKey);
-    result
-      ? renderMovieCards(result)
-      : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
-    localStorage.searchContent = "";
-  } else if (
+  if (
+    event &&
     searchInput.value &&
     (event.type === "click" ||
       (event.type === "keypress" && event.keyCode === 13))
   ) {
-    let searchKey = searchInput.value;
+    searchKey = searchInput.value;
     let result = searchMovies(searchKey);
     result
       ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
-    searchInput.value = "";
+  } else if (searchKey) {
+    let result = searchMovies(searchKey);
+    result
+      ? renderMovieCards(result)
+      : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
+    searchInput.value = searchKey;
   }
 
   $("#load_more").addClass("hide");

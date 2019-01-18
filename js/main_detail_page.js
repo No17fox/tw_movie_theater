@@ -47,8 +47,7 @@ function saveSearchKey(event) {
     (event.type === "click" ||
       (event.type === "keypress" && event.keyCode === 13))
   ) {
-    localStorage.searchContent = searchKey;
-    window.location.href = "./homepage.html";
+    window.location.href = "./homepage.html" + `?search=${searchKey}`;
     searchInput.value = "";
   }
 }
