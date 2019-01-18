@@ -49,6 +49,5 @@ function saveSearchKey(event) {
   ) {
     localStorage.searchContent = searchKey;
     window.location.href = "./homepage.html";
-    searchInput.value = "";
   }
 }

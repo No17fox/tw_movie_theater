@@ -61,7 +61,6 @@ function showMoviesBySearch(event) {
     result
       ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
-    searchInput.value = "";
   }
 
   $("#load_more").addClass("hide");
