@@ -15,7 +15,7 @@ function main() {
 
 function showMoviesByRange(firstNum, secondNum) {
   let movies = getMoviesByRange(firstNum, secondNum);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
 }
 
 function showTopMovies(event) {
@@ -25,7 +25,7 @@ function showTopMovies(event) {
 
 function showRandomMovies(event, count = 12) {
   let movies = getRandomMovies(count);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
   renderGuideItemActive(event.target);
 }
 
@@ -33,7 +33,7 @@ function showMoviesByGenre(event) {
   let parentNode = event.target.parentNode;
   let genre = parentNode.querySelector(".guide_title").innerText;
   let movies = getMoviesInfoByGenre(genre);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
   renderGuideItemActive(event.target);
 }
 
@@ -44,7 +44,7 @@ function showMoviesBySearch(event) {
     let searchKey = localStorage.searchContent;
     let result = searchMovies(searchKey);
     result
-      ? renderNewMovieCards(result)
+      ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
     localStorage.searchContent = "";
   } else if (
@@ -52,10 +52,10 @@ function showMoviesBySearch(event) {
     (event.type === "click" ||
       (event.type === "keypress" && event.keyCode === 13))
   ) {
-    searchKey = searchInput.value;
+    let searchKey = searchInput.value;
     let result = searchMovies(searchKey);
     result
-      ? renderNewMovieCards(result)
+      ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
     searchInput.value = "";
   }
@@ -67,4 +67,16 @@ function storageSelectedMovieId(event) {
     parentNode = parentNode.parentNode;
   }
   localStorage.selectedMovie = parentNode.getAttribute("movie_id");
+}
+
+function showMoreMovies(element) {
+  let posterWall = document.getElementById("poster_wall");
+  let movieCardsNum = posterWall.querySelectorAll(".movie").length;
+
+  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 223);
+  if (movies.length) {
+    renderMovieCards(movies, false);
+  } else {
+    $(element).text("所有电影都已经加载啦");
+  }
 }
