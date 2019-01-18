@@ -79,7 +79,7 @@ function showMoreMovies(element) {
   let posterWall = document.getElementById("poster_wall");
   let movieCardsNum = posterWall.querySelectorAll(".movie").length;
 
-  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 100);
+  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 47);
   if (movies.length) {
     renderMovieCards(movies, false);
   } else {
