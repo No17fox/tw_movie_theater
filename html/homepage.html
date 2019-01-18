@@ -124,7 +124,7 @@
           </div>
         </li>
         <li>
-          <div class="guide_item" onclick="showMoreMovies(this)">
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
             <div class="guide_icon">
               <img src="../images/family.png" alt="" />
             </div>
@@ -163,7 +163,9 @@
       <template id="message">
         <div class="error_message" id="error_message"></div>
       </template>
-      <div class="load_more hide" id="load_more" onclick="">查看更多电影</div>
+      <div class="load_more" id="load_more" onclick="showMoreMovies(this)">
+        查看更多电影
+      </div>
     </div>
     <script type="text/javascript" src="../js/load.js"></script>
     <script type="text/javascript" src="../js/service.js"></script>

@@ -11,6 +11,7 @@ function main() {
     showMoviesByRange(0, 23);
   }
   renderMainGuideItemActive();
+  $("#load_more").removeClass("hide");
 }
 
 function showMoviesByRange(firstNum, secondNum) {
@@ -21,12 +22,14 @@ function showMoviesByRange(firstNum, secondNum) {
 function showTopMovies(event) {
   showMoviesByRange(100, 147);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showRandomMovies(event, count = 12) {
   let movies = getRandomMovies(count);
   renderMovieCards(movies);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showMoviesByGenre(event) {
@@ -35,6 +38,7 @@ function showMoviesByGenre(event) {
   let movies = getMoviesInfoByGenre(genre);
   renderMovieCards(movies);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showMoviesBySearch(event) {
@@ -59,6 +63,8 @@ function showMoviesBySearch(event) {
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
     searchInput.value = "";
   }
+
+  $("#load_more").addClass("hide");
 }
 
 function storageSelectedMovieId(event) {
@@ -73,7 +79,7 @@ function showMoreMovies(element) {
   let posterWall = document.getElementById("poster_wall");
   let movieCardsNum = posterWall.querySelectorAll(".movie").length;
 
-  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 223);
+  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 100);
   if (movies.length) {
     renderMovieCards(movies, false);
   } else {
