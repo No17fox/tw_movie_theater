@@ -49,7 +49,9 @@ function getMoviesInfoByName(movieName) {
   let movies = JSON.parse(localStorage.moviesStorage);
 
   return Object.values(movies).filter(
-    movie => movieName === movie.title || movieName === movie.original_title
+    movie =>
+      movie.title.indexOf(movieName) > -1 ||
+      movie.original_title.toLowerCase().indexOf(movieName.toLowerCase()) > -1
   );
 }
 
