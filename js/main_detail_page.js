@@ -5,7 +5,8 @@ if (localStorage.moviesStorage) {
 }
 
 function showMovieDetailPage() {
-  let movieID = localStorage.selectedMovie || "1291545";
+  let urlParams = window.location.search;
+  let movieID = urlParams.slice(urlParams.indexOf("id=") + 3) || "1291545";
   getMovieDetailInfo(movieID, renderMovieDetails);
   getMovieDiscuss(movieID, "comments", renderAllComments, 4);
   getMovieDiscuss(movieID, "reviews", renderAllReviews, 4);
@@ -15,14 +16,6 @@ function showMovieDetailPage() {
 function showRecommends() {
   let movies = getRandomMovies(4);
   renderRecommends(movies);
-}
-
-function storageSelectedMovieId(event) {
-  let parentNode = event.target.parentNode;
-  while (!Array.from(parentNode.classList).includes("movie")) {
-    parentNode = parentNode.parentNode;
-  }
-  localStorage.selectedMovie = parentNode.getAttribute("movie_id");
 }
 
 function expendReview(element) {

@@ -67,14 +67,6 @@ function showMoviesBySearch(event) {
   $("#load_more").addClass("hide");
 }
 
-function storageSelectedMovieId(event) {
-  let parentNode = event.target.parentNode;
-  while (!Array.from(parentNode.classList).includes("movie")) {
-    parentNode = parentNode.parentNode;
-  }
-  localStorage.selectedMovie = parentNode.getAttribute("movie_id");
-}
-
 function showMoreMovies(element) {
   let posterWall = document.getElementById("poster_wall");
   let movieCardsNum = posterWall.querySelectorAll(".movie").length;

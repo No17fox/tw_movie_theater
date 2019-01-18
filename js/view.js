@@ -1,6 +1,7 @@
 function renderMovieCard(movie) {
   let posterWall = document.getElementById("poster_wall");
   let movieTemplate = document.getElementById("movie_card");
+
   let poster = movieTemplate.content.getElementById("poster");
   let title = movieTemplate.content.getElementById("title");
   let rating = movieTemplate.content.getElementById("rating");
@@ -12,6 +13,8 @@ function renderMovieCard(movie) {
   movieNode.setAttribute("movie_id", movie.id);
 
   let movieClone = document.importNode(movieTemplate.content, true);
+  let movieUrl = movieClone.getElementById("movie_url");
+  movieUrl.href = movieUrl.href + `?id=${movie.id}`;
   posterWall.append(movieClone);
 }
 
@@ -256,8 +259,8 @@ function renderMovieCasts(casts) {
 
 function renderRecommends(movies) {
   let recommend = document.getElementById("recommendation");
-
   let movieTemplate = document.getElementById("movie_card");
+
   let poster = movieTemplate.content.getElementById("poster");
   let title = movieTemplate.content.getElementById("title");
   let rating = movieTemplate.content.getElementById("rating");
@@ -270,6 +273,8 @@ function renderRecommends(movies) {
     movieNode.setAttribute("movie_id", movie.id);
 
     let movieClone = document.importNode(movieTemplate.content, true);
+    let movieUrl = movieClone.getElementById("movie_url");
+    movieUrl.href = movieUrl.href + `?id=${movie.id}`;
     recommend.append(movieClone);
   });
 }
