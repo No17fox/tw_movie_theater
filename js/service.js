@@ -64,17 +64,19 @@ function getMoviesInfoByGenre(movieGenre) {
 }
 
 function searchMovies(searchKey) {
+  let result = [];
+
   let idResult = getMovieInfoByID(searchKey);
   let nameResult = getMoviesInfoByName(searchKey);
   let genreResult = getMoviesInfoByGenre(searchKey);
 
-  return idResult
-    ? idResult
-    : nameResult.length
-    ? nameResult
-    : genreResult.length
-    ? genreResult
-    : false;
+  if (idResult) {
+    result = nameResult.concat(genreResult).push(idResult);
+  } else {
+    result = nameResult.concat(genreResult);
+  }
+
+  return result;
 }
 
 function getMoviesByRange(firstNum, secondNum) {
