@@ -6,7 +6,7 @@ if (localStorage.moviesStorage) {
 
 function showMovieDetailPage() {
   let urlParams = window.location.search;
-  let movieID = urlParams.slice(urlParams.indexOf("id=") + 3) || "1291545";
+  let movieID = urlParams.match(/[0-9]+/g)[0] || "1291545";
   getMovieDetailInfo(movieID, renderMovieDetails);
   getMovieDiscuss(movieID, "comments", renderAllComments, 4);
   getMovieDiscuss(movieID, "reviews", renderAllReviews, 4);
