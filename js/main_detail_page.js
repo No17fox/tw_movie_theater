@@ -13,6 +13,18 @@ function showMovieDetailPage() {
   showRecommends();
 }
 
+function showMoreComments() {
+  let urlParams = window.location.search;
+  let movieID = urlParams.match(/id=[0-9]+/g)[0].slice(3) || "1291545";
+  getMovieDiscuss(movieID, "comments", renderAllComments, 4);
+}
+
+function showMoreReviews() {
+  let urlParams = window.location.search;
+  let movieID = urlParams.match(/id=[0-9]+/g)[0].slice(3) || "1291545";
+  getMovieDiscuss(movieID, "reviews", renderAllReviews, 4);
+}
+
 function showRecommends() {
   let movies = getRandomMovies(4);
   renderRecommends(movies);
