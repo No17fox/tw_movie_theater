@@ -48,20 +48,15 @@ function showMoviesByGenre(event) {
 function showMoviesBySearch(event) {
   let searchInput = document.getElementById("search_input");
   let urlParams = window.location.search;
-  let searchKey = decodeURI(urlParams.match(/search=.*/g)[0].slice(7));
+  let searchKey = searchInput.value;
 
-  if (
-    event &&
-    searchInput.value &&
-    (event.type === "click" ||
-      (event.type === "keypress" && event.keyCode === 13))
-  ) {
-    searchKey = searchInput.value;
+  if (searchKey && (event.type === "click" || event.type === "change")) {
     let result = searchMovies(searchKey);
     result
       ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
-  } else if (searchKey) {
+  } else if (urlParams.includes("search")) {
+    let searchKey = decodeURI(urlParams.match(/search=.*/g)[0].slice(7));
     let result = searchMovies(searchKey);
     result
       ? renderMovieCards(result)
