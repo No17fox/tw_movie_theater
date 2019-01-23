@@ -67,11 +67,28 @@ function renderErrorMessage(message) {
   content.append(errorMessageClone);
 }
 
+function activeIcon(target) {
+  let icon = $(target)
+    .parents("li")
+    .find("img");
+  let imgSrc = icon.attr("src").replace(/\.png/, "_checked.png");
+  icon.attr("src", imgSrc);
+}
+
+function initializeIcon(target) {
+  let icon = $(target)
+    .parents("li")
+    .find("img");
+  let imgSrc = icon.attr("src").replace(/_checked/, "");
+  icon.attr("src", imgSrc);
+}
+
 function renderGuideItemActive(target) {
   renderAllGuideItemNegative();
   $(target)
     .parents("li")
     .addClass("active");
+  activeIcon(target);
 }
 
 function renderMainGuideItemActive() {
@@ -80,6 +97,7 @@ function renderMainGuideItemActive() {
   $(mainGuideItem)
     .parent("li")
     .addClass("active");
+  activeIcon(mainGuideItem);
 }
 
 function renderAllGuideItemNegative() {
@@ -88,6 +106,7 @@ function renderAllGuideItemNegative() {
     $(guideItem)
       .parent("li")
       .removeClass("active");
+    initializeIcon(guideItem);
   });
 }
 
