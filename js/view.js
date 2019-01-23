@@ -2,12 +2,14 @@ function renderMovieCard(movie) {
   let posterWall = document.getElementById("poster_wall");
   let movieTemplate = document.getElementById("movie_card");
 
-  let poster = movieTemplate.content.getElementById("poster");
+  let frontPoster = movieTemplate.content.getElementById("front_poster");
+  let backPoster = movieTemplate.content.getElementById("back_poster");
   let title = movieTemplate.content.getElementById("title");
   let rating = movieTemplate.content.getElementById("rating");
   let movieNode = movieTemplate.content.querySelector(".movie");
 
-  poster.src = movie.image;
+  frontPoster.src = movie.image;
+  backPoster.src = movie.image;
   title.textContent = movie.title;
   rating.textContent = movie.rating;
   movieNode.setAttribute("movie_id", movie.id);

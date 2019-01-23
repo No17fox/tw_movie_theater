@@ -77,3 +77,15 @@ function showMoreMovies(element) {
     $(element).text("所有电影都已经加载啦");
   }
 }
+
+function promptLikeBtn(target) {
+  $(target)
+    .children("#like_btn")
+    .attr("src", "../images/heart_red.png");
+}
+
+function initializeLikeBtn(target) {
+  $(target)
+    .children("#like_btn")
+    .attr("src", "../images/heart_white.png");
+}

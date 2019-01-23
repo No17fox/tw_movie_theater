@@ -98,7 +98,10 @@ body {
   grid-gap: 10px;
 }
 
-.poster {
+.poster,
+.front,
+.back,
+.like {
   width: 130px;
   height: 190px;
 }

@@ -1,5 +1,5 @@
 .movie,
-.poster img {
+img {
   border-radius: 8px;
 }
 
@@ -12,13 +12,6 @@
 .movie:hover {
   cursor: pointer;
   background: #ececec;
-  box-shadow: 0px 1px 15px 1px #ccc;
-}
-
-.movie:hover img {
-  transform: scale(1.05, 1.05);
-  transition: all 0.25s ease-in-out;
-  overflow: hidden;
 }
 
 .poster,
@@ -52,4 +45,52 @@
 
 .movie a {
   text-decoration: none;
+}
+
+.poster {
+  perspective: 1000;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+}
+.front {
+  z-index: 2;
+}
+.back {
+  transform: rotateY(-180deg);
+}
+
+.movie:hover .poster {
+  transform: rotateY(180deg);
+}
+
+.like {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.like_icon {
+  width: 30px;
+  height: 30px;
 }

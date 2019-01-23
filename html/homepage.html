@@ -146,12 +146,36 @@
           <div class="movie" movie_id="">
             <a id="movie_url" href="./details_page.html">
               <div class="poster">
-                <img
-                  id="poster"
-                  src=""
-                  onerror="this.src='../images/image_load_error.png'"
-                  alt=""
-                />
+                <div class="front">
+                  <img
+                    id="front_poster"
+                    src=""
+                    onerror="this.src='../images/image_load_error.png'"
+                    alt=""
+                  />
+                </div>
+                <div class="back">
+                  <img
+                    id="back_poster"
+                    src=""
+                    onerror="this.src='../images/image_load_error.png'"
+                    alt=""
+                  />
+                  <div class="like">
+                    <div
+                      class="like_icon"
+                      onmouseover="promptLikeBtn(this)"
+                      onmouseout="initializeLikeBtn(this)"
+                    >
+                      <img
+                        id="like_btn"
+                        src="../images/heart_white.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="like_prompt">喜欢</div>
+                  </div>
+                </div>
               </div>
               <div class="movie_basic_infor">
                 <div class="movie_title" id="title"></div>
