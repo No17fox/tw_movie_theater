@@ -37,8 +37,10 @@ function showRandomMovies(event, count = 12) {
 }
 
 function showMoviesByGenre(event) {
-  let parentNode = event.target.parentNode;
-  let genre = parentNode.querySelector(".guide_title").innerText;
+  let genre = $(event.target)
+    .parents("li")
+    .find(".guide_title")
+    .text();
   let movies = getMoviesInfoByGenre(genre);
   renderMovieCards(movies);
   renderGuideItemActive(event.target);
